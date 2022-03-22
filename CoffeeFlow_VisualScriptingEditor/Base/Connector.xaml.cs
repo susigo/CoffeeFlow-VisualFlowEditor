@@ -244,7 +244,11 @@ namespace CoffeeFlow.Base
         {
             if (CurrentConnection == null)
                 return;
-
+            if (CurrentConnection.ParentNode == null)
+            {
+                CurrentConnection = null;
+                return;
+            }
             CurrentConnection.baseColor = Brushes.Black;
             CurrentConnection.ParentNode.IsDraggable = true;
             CurrentConnection = null;
@@ -458,6 +462,11 @@ namespace CoffeeFlow.Base
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(info));
             }
+        }
+
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

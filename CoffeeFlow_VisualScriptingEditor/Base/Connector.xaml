@@ -57,8 +57,10 @@
         </Style>
     </UserControl.Resources>
 
-    <Button Click="Button_Click" Style="{DynamicResource RoundCorner}" Focusable="False" IsTabStop="False"  >
-
+    <Button 
+        Click="Button_Click" 
+        Style="{DynamicResource RoundCorner}" Focusable="False" IsTabStop="False"  
+        >
     </Button>
 
 

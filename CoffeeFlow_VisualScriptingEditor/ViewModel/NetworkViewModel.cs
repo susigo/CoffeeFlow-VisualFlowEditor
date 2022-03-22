@@ -127,6 +127,10 @@ namespace CoffeeFlow.ViewModel
                 t.Text = s.Key;
         }
 
+        /// <summary>
+        /// 向场景中添加控件
+        /// </summary>
+        /// <param name="node"></param>
         public void AddNodeToGrid(NodeWrapper node)
         {
             NodeViewModel nodeToAdd = null;
@@ -185,6 +189,16 @@ namespace CoffeeFlow.ViewModel
                 n.NodeName = node.NodeName;
                 n.Type = node.BaseAssemblyType;
 
+                n.Margin = new Thickness(p.X, p.Y, 0, 0);
+                n.CallingClass = node.CallingClass;
+                nodeToAdd = n;
+            }
+
+            if (node.TypeOfNode == NodeType.FindNCCModel)
+            {
+                NCCMatchNode n = new NCCMatchNode();
+                n.NodeName = node.NodeName;
+                
                 n.Margin = new Thickness(p.X, p.Y, 0, 0);
                 n.CallingClass = node.CallingClass;
                 nodeToAdd = n;

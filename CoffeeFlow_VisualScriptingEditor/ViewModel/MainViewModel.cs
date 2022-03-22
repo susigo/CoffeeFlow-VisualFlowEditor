@@ -484,20 +484,44 @@ namespace CoffeeFlow.ViewModel
 
             NodeWrapper r = new NodeWrapper();
             r.TypeOfNode = NodeType.RootNode;
-            r.NodeName = "GameStart";
+            r.NodeName = "开始";
 
             NodeWrapper r2 = new NodeWrapper();
             r2.TypeOfNode = NodeType.RootNode;
-            r2.NodeName = "Window Close";
+            r2.NodeName = "结束";
 
             NodeWrapper con = new NodeWrapper();
             con.TypeOfNode = NodeType.ConditionNode;
-            con.NodeName = "Condition";
+            con.NodeName = "条件判断";
             con.IsDeletable = false;
+
+            NodeWrapper logc = new NodeWrapper();
+            logc.TypeOfNode = NodeType.LogicNode;
+            logc.NodeName = "逻辑判断";
+            logc.IsDeletable = false;
+
+            NodeWrapper match_tool = new NodeWrapper();
+            match_tool.TypeOfNode = NodeType.MethodNode;
+            match_tool.NodeName = "NCC模板匹配";
+            match_tool.IsDeletable = false;
+
+            NodeWrapper param_node = new NodeWrapper();
+            param_node.TypeOfNode = NodeType.VariableNode;
+            param_node.NodeName = "参数";
+            param_node.IsDeletable = false;
+
+            NodeWrapper ncc_node = new NodeWrapper();
+            ncc_node.TypeOfNode = NodeType.FindNCCModel;
+            ncc_node.NodeName = "查找NCC模型";
+            ncc_node.IsDeletable = false;
 
             Triggers.Add(r);
             Triggers.Add(r2);
             Triggers.Add(con);
+            Triggers.Add(logc);
+            Triggers.Add(match_tool);
+            Triggers.Add(param_node);
+            triggers.Add(ncc_node);
         }
 
         public void LogStatus(string status, bool showInStatusLabel = false)
